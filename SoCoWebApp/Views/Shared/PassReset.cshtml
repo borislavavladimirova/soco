@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Profile changes";
+}
+
+<h2>@ViewBag.Title</h2>
+@if (ViewBag.isForgotten)
+{
+    <p style="text-align: center; color: #324960;">Password for user - @ViewBag.user is reseted. An email wtih the new password has been sent to your email - @ViewBag.user.</p>
+    <div>
+        @Html.ActionLink("Back to Login", "Login", "User")
+    </div>
+}
+else
+{
+    <p style="text-align: center; color: #324960;">New profile's been created.  An email's been sent to the user.</p>
+    <div>
+        @Html.ActionLink("Back to Users", "Index", "User")
+    </div>
+}

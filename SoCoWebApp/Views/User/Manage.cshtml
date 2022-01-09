@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>Manage</h2>
+@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink("My information", "UserInfo", null, new { @class = "linksStyle" })
+    <br />    
+    if (ViewBag.isAdmin)
+    {
+        @Html.ActionLink("All Users", "Index", null, new { @class = "linksStyle" })
+    }
+}

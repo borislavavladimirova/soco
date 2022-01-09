@@ -1,0 +1,126 @@
+﻿@model SoCoWebApp.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+@if (Request.IsAuthenticated)
+{
+    <div>
+        <h4>Job</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Responsibility)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Responsibility)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Requirment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Requirment)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Skill)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Skill)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Offer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Offer)
+            </dd>
+
+            @{if (!(Model.AdditComment == null))
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AdditComment)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.AdditComment)
+                    </dd>
+                }
+            }
+            <dt>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Office.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Office.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Position.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Position.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SeniorityLevel.SeniorityLevel1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SeniorityLevel.SeniorityLevel1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.User.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedAt)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.User1.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpdatedAt)
+            </dd>
+
+        </dl>
+    </div>
+    <br>
+    <br>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

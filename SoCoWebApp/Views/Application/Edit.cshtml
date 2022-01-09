@@ -1,0 +1,120 @@
+﻿@model SoCoWebApp.Models.Application
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CVPath)
+        </dt>
+
+        @{
+            var name = Model.CVPath;
+            var link = @Url.Content("~/UploadedFiles/") + name.Replace(" ", "%20");
+        }
+        <dd>
+            <a href="@link" target="_blank">@name</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+    </dl>
+</div>
+    <div class="form-horizontal">
+        <h4>Application</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ObserverId)
+        @Html.HiddenFor(model => model.FName)
+        @Html.HiddenFor(model => model.LName)
+        @Html.HiddenFor(model => model.Email)
+        @Html.HiddenFor(model => model.CVPath)
+        @Html.HiddenFor(model => model.ApplicationDate)
+        @Html.HiddenFor(model => model.JobId)
+        @Html.HiddenFor(model => model.Comment)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive)
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ApplicantStateId, "Applicant State", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ApplicantStateId", (List<SelectListItem>)ViewBag.states, "Choose Applicant State State", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ApplicantStateId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ObserverComment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ObserverComment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ObserverComment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

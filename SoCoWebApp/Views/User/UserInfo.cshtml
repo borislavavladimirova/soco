@@ -1,0 +1,51 @@
+﻿@model SoCoWebApp.Models.User
+
+@{
+    ViewBag.Title = "User Information";
+}
+
+<h2>@ViewBag.Title</h2>
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Change password", "ChangePass", null, new { @class = "linksStyle" })
+    </p>
+
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LName)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit my info", "EditUserInfo", new { id = Model.Id }) |
+        @Html.ActionLink("Back to Manage", "Manage")
+    </p>
+}

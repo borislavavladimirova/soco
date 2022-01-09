@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ea54d3ff3e042099c542680bc246326" Name="Diagram1">
+        <EntityTypeShape EntityType="SoCoyDbModel.ApplicantState" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.Application" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.Country" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.Job" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.Office" Width="1.5" PointX="3.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.Position" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.SeniorityLevel" Width="1.5" PointX="3.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoCoyDbModel.User" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Application_ApplicantState" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Application_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Application_User_Observer" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Application_User_Updated" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Office_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Job_Office" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Job_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Job_SeniorityLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Job_User_Created" ManuallyRouted="false" />
+        <AssociationConnector Association="SoCoyDbModel.FK_Job_User_Updated" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

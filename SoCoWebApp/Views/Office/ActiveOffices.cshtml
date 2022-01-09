@@ -1,0 +1,17 @@
+﻿@model IEnumerable<SoCoWebApp.Models.Office>
+
+@{
+    ViewBag.Title = "Check for jobs";
+}
+
+<h2>Check for jobs</h2>
+
+<dl style="text-align:center; color:#324960;">
+    <dt>Active Offices</dt>
+    @foreach (var item in Model)
+    {
+    <dd>
+        @Html.ActionLink(item.Name + ", " + item.Country.Name, "Index", "Job", new { officeid = item.Id }, null)
+    </dd>
+    }
+</dl>

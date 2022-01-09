@@ -1,0 +1,194 @@
+﻿@model SoCoWebApp.Models.Application
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+        @{if (!(Model.Comment == null))
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Comment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Comment)
+                </dd>
+            }
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.CVPath)
+        </dt>
+
+        @{
+            var name = Model.CVPath;
+            var link = @Url.Content("~/UploadedFiles/") + name.Replace(" ", "%20");
+        }
+        <dd>
+            <a href="@link" target="_blank">@name</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantState.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantState.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObserverComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObserverComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObserverId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User1.Email)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+    <h2>Job</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Responsibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Responsibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Requirment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Requirment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Skill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Skill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Offer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Offer)
+        </dd>
+
+        @{if (!(Model.Job.AdditComment == null))
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Job.AdditComment)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Job.AdditComment)
+                </dd>
+            }
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Office.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Office.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Position.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Position.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Application", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Go to Job", "Details", "Job", new { id = Model.JobId }, null) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
